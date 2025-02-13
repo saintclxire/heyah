@@ -1,24 +1,29 @@
+/* Reset and General Styling */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-  }
-  
-  body {
+}
+
+body {
     height: 100vh;
     display: flex;
     justify-content: center;
+    text-align: center;
     align-items: center;
     background: #191D24;
-  }
+    transition: background-color 1s ease;
+    font-family: 'Poppins', sans-serif;
+}
 
-  #app {
+#app {
     display: flex;
     flex-direction: column;
     align-items: center;
-  }
-  
-  button.first-btn {
+}
+
+/* First Button (Initial Button) */
+button.first-btn {
     background: transparent;
     border: none;
     color: white;
@@ -30,48 +35,111 @@
     justify-content: center;
     align-items: center;
     transition: transform 1s ease, opacity 1s ease;
-  }
-  
-  button.first-btn::before,
-  button.first-btn::after {
+}
+
+button.first-btn::before,
+button.first-btn::after {
     content: "";
     position: absolute;
     top: 0;
     width: 50%;
     height: 100%;
     background: #bf616a;
-    transition: transform 1s ease-in-out;
-  }
-  
-  button.first-btn::before {
+    transition: transform 0.5s ease-in-out;
+}
+
+button.first-btn::before {
     border-radius: 2em 0 0 2em;
     left: 0;
-  }
-  
-  button.first-btn::after {
+}
+
+button.first-btn::after {
     border-radius: 0 2em 2em 0;
     right: 0;
-  }
-  
-  button.first-btn.active::before {
+}
+
+button.first-btn.active::before {
     transform: rotate(45deg) translate(1.5em, -1.5em);
-    animation: pulse 1s ease-in-out infinite;
-  }
-  
-  button.first-btn.active::after {
+}
+
+button.first-btn.active::after {
     transform: rotate(-45deg) translate(-1.5em, -1.5em);
-    animation: pulse 1s ease-in-out infinite;
-  }
-  
-  button.first-btn .text {
+}
+
+button.first-btn .text {
     position: relative;
-    z-index: 1; /* Make sure the text is on top of the button */
-  }
-  
-  button.first-btn.active .text {
+    z-index: 1; /* Ensure text is on top */
+}
+
+button.first-btn.active .text {
     opacity: 0;
-  }
-  
-  body {
-    transition: background-color 1s ease;
-  }
+}
+
+/* Content Styling */
+img {
+    max-width: 100%;
+    height: auto;
+    opacity: 1;
+    transition: opacity 2s ease-in-out;
+    display: block;
+}
+
+h2 {
+    font-size: 2em;
+    color: white;
+    opacity: 1;
+    transition: opacity 1s ease-in-out;
+}
+
+p {
+    font-size: 1.2em;
+    color: #f8f8f8;
+    opacity: 1;
+    transition: opacity 1s ease-in-out;
+}
+
+.button-row {
+    text-align: center; /* Center the buttons */
+    margin-top: 20px;
+}
+
+/* General Button Styling */
+.yes-btn,
+.no-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    margin: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform -.2s ease-in-out, font-size 0.2s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+/* Styling for Yes Button */
+.yes-btn {
+    background-color: #84b956; /* Green */
+    color: white;
+}
+
+/* Styling for No Button */
+.no-btn {
+    background-color: #a83c47; /* Red */
+    color: white;
+}
+
+.fade-in {
+    opacity: 1; /* Make buttons visible */
+    transform: scale(1);
+}
+
+.fade-in-slow {
+    opacity: 0;
+    animation: fadeIn 0.5s ease-in-out forwards;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+    0% { opacity: 0; transform: scale(0.9); }
+    100% { opacity: 1; transform: scale(1); }
+}
