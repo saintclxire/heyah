@@ -120,11 +120,11 @@ document.addEventListener("DOMContentLoaded", function () {
           img2.classList.add("fade-in-slow");
 
           const heading2 = document.createElement("h2");
-          heading2.innerText = "I love you baby!";
+          heading2.innerText = "YIPPEE!";
           heading2.classList.add("fade-in-slow");
 
           const text2 = document.createElement("p");
-          text2.innerText = "This means the world to me.";
+          text2.innerText = "I LOVE YOU BABY!";
           text2.classList.add("fade-in-slow");
 
           app.appendChild(img2);
